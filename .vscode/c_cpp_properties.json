@@ -1,0 +1,82 @@
+//
+// !!! WARNING !!! AUTO-GENERATED FILE!
+// PLEASE DO NOT MODIFY IT AND USE "platformio.ini":
+// https://docs.platformio.org/page/projectconf/section_env_build.html#build-flags
+//
+{
+    "configurations": [
+        {
+            "name": "PlatformIO",
+            "includePath": [
+                "D:/BMCU/BMCU-master/src",
+                "D:/BMCU/BMCU-master/.pio/libdeps/genericCH32V203C8T6/CRC/src",
+                "C:/Users/hoang/.platformio/packages/framework-arduino-openwch-ch32/cores/arduino",
+                "C:/Users/hoang/.platformio/packages/framework-arduino-openwch-ch32/cores/arduino/avr",
+                "C:/Users/hoang/.platformio/packages/framework-arduino-openwch-ch32/cores/arduino/ch32",
+                "C:/Users/hoang/.platformio/packages/framework-arduino-openwch-ch32/cores/arduino/ch32/lib",
+                "C:/Users/hoang/.platformio/packages/framework-arduino-openwch-ch32/system/CH32V20x/USER",
+                "C:/Users/hoang/.platformio/packages/framework-arduino-openwch-ch32/system/CH32V20x/SRC/Core",
+                "C:/Users/hoang/.platformio/packages/framework-arduino-openwch-ch32/system/CH32V20x/SRC/Debug",
+                "C:/Users/hoang/.platformio/packages/framework-arduino-openwch-ch32/system/CH32V20x/SRC/Startup",
+                "C:/Users/hoang/.platformio/packages/framework-arduino-openwch-ch32/system/CH32V20x/SRC/Peripheral/inc",
+                "C:/Users/hoang/.platformio/packages/framework-arduino-openwch-ch32/system/CH32V20x/SRC/Peripheral/src",
+                "C:/Users/hoang/.platformio/packages/framework-arduino-openwch-ch32/variants/CH32V20x/CH32V203C8",
+                "C:/Users/hoang/.platformio/packages/framework-arduino-openwch-ch32/libraries/EEPROM/src",
+                "C:/Users/hoang/.platformio/packages/framework-arduino-openwch-ch32/libraries/SPI/src",
+                "C:/Users/hoang/.platformio/packages/framework-arduino-openwch-ch32/libraries/USBPD_SINK/src",
+                "C:/Users/hoang/.platformio/packages/framework-arduino-openwch-ch32/libraries/Wire/src",
+                ""
+            ],
+            "browse": {
+                "limitSymbolsToIncludedHeaders": true,
+                "path": [
+                    "D:/BMCU/BMCU-master/src",
+                    "D:/BMCU/BMCU-master/.pio/libdeps/genericCH32V203C8T6/CRC/src",
+                    "C:/Users/hoang/.platformio/packages/framework-arduino-openwch-ch32/cores/arduino",
+                    "C:/Users/hoang/.platformio/packages/framework-arduino-openwch-ch32/cores/arduino/avr",
+                    "C:/Users/hoang/.platformio/packages/framework-arduino-openwch-ch32/cores/arduino/ch32",
+                    "C:/Users/hoang/.platformio/packages/framework-arduino-openwch-ch32/cores/arduino/ch32/lib",
+                    "C:/Users/hoang/.platformio/packages/framework-arduino-openwch-ch32/system/CH32V20x/USER",
+                    "C:/Users/hoang/.platformio/packages/framework-arduino-openwch-ch32/system/CH32V20x/SRC/Core",
+                    "C:/Users/hoang/.platformio/packages/framework-arduino-openwch-ch32/system/CH32V20x/SRC/Debug",
+                    "C:/Users/hoang/.platformio/packages/framework-arduino-openwch-ch32/system/CH32V20x/SRC/Startup",
+                    "C:/Users/hoang/.platformio/packages/framework-arduino-openwch-ch32/system/CH32V20x/SRC/Peripheral/inc",
+                    "C:/Users/hoang/.platformio/packages/framework-arduino-openwch-ch32/system/CH32V20x/SRC/Peripheral/src",
+                    "C:/Users/hoang/.platformio/packages/framework-arduino-openwch-ch32/variants/CH32V20x/CH32V203C8",
+                    "C:/Users/hoang/.platformio/packages/framework-arduino-openwch-ch32/libraries/EEPROM/src",
+                    "C:/Users/hoang/.platformio/packages/framework-arduino-openwch-ch32/libraries/SPI/src",
+                    "C:/Users/hoang/.platformio/packages/framework-arduino-openwch-ch32/libraries/USBPD_SINK/src",
+                    "C:/Users/hoang/.platformio/packages/framework-arduino-openwch-ch32/libraries/Wire/src",
+                    ""
+                ]
+            },
+            "defines": [
+                "PLATFORMIO=60118",
+                "CH32V203C8",
+                "CH32V20X",
+                "CH32V20x",
+                "CH32V203",
+                "CH32V20x_D6",
+                "SYSCLK_FREQ_144MHz_HSI=144000000",
+                "ARDUINO=10808",
+                "ARDUINO_ARCH_CH32V",
+                "ARDUINO_ARCH_CH32",
+                "VARIANT_H=\"variant_CH32V203C8.h\"",
+                "CH32V20x",
+                "NDEBUG",
+                ""
+            ],
+            "cStandard": "gnu99",
+            "cppStandard": "gnu++14",
+            "compilerPath": "C:/Users/hoang/.platformio/packages/toolchain-riscv/bin/riscv-none-embed-gcc.exe",
+            "compilerArgs": [
+                "-march=rv32imacxw",
+                "-mabi=ilp32",
+                "-msmall-data-limit=8",
+                "-msave-restore",
+                ""
+            ]
+        }
+    ],
+    "version": 4
+}
