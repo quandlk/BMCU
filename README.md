@@ -1,66 +1,55 @@
 # BMCU
 
-#### 介绍
+#### Giới thiệu
 
-BMCU以四通道为一个单位，目前以CH32单片机为主控设计。其设计所需资料均参考于网络公开资料及个人测试，程序基于Platform IO平台下CH32单片机的Arduino支持库设计，调用了robtillaart的CRC库。
- **注意:本项目遵循GPL2.0开源协议，但需要额外补充的是本项目禁止商业用途。** 
+BMCU được thiết kế với bốn kênh làm một đơn vị, hiện sử dụng vi điều khiển CH32 làm bộ điều khiển chính. Tài liệu thiết kế được tham khảo từ các nguồn công khai trên mạng và các thử nghiệm cá nhân. Chương trình được phát triển dựa trên thư viện hỗ trợ Arduino cho vi điều khiển CH32 trên nền tảng Platform IO, sử dụng thư viện CRC của robtillaart.  
+**Lưu ý: Dự án này tuân theo giấy phép mã nguồn mở GPL 2.0, nhưng cần bổ sung rằng dự án này cấm sử dụng cho mục đích thương mại.**
 
-#### 使用说明及安装教程
+#### Hướng dẫn sử dụng và cài đặt
 
- **1.  制造所需资料见BMCU整合打包文件** 
+**1. Tài liệu cần thiết để chế tạo xem trong tệp tích hợp BMCU**
 
-BMCU打包文件目前发布在群内，或可以从[https://oshwhub.com/bamboo-shoot-xmcu-pcb-team/bmcu](https://oshwhub.com/bamboo-shoot-xmcu-pcb-team/bmcu)的附件部分，找到V1.1版打包文件。
+Tệp tích hợp BMCU hiện được phát hành trong nhóm hoặc có thể tải từ phần đính kèm tại [https://oshwhub.com/bamboo-shoot-xmcu-pcb-team/bmcu](https://oshwhub.com/bamboo-shoot-xmcu-pcb-team/bmcu), tìm tệp tích hợp phiên bản V1.1.
 
- **2.  所需刷写的固件见release** 
+**2. Firmware cần ghi xem trong phần release**
 
- **3.  安装及使用教程参见wiki(由群友@丸子 牵头搭建，社区共建中)** 
+**3. Hướng dẫn cài đặt và sử dụng xem trong wiki (do thành viên nhóm @丸子 khởi xướng, đang được cộng đồng xây dựng)**
 
-地址：[https://bmcu.wanzii.cn/](https://bmcu.wanzii.cn/)
+Địa chỉ: [https://bmcu.wanzii.cn/](https://bmcu.wanzii.cn/)
 
-#### 软件架构
-主要文件：
+#### Kiến trúc phần mềm
 
-main.cpp/h：               负责调度各个模块
+Các tệp chính:
 
-many_soft_AS5600.cpp/h：   IO模拟的，可同时和多个AS5600通讯的驱动
+main.cpp/h:               Chịu trách nhiệm điều phối các mô-đun  
+many_soft_AS5600.cpp/h:   Trình điều khiển mô phỏng IO, có thể giao tiếp đồng thời với nhiều AS5600  
+Motion_control.cpp/h:     Chịu trách nhiệm điều phối phần cứng và trạng thái chuyển động  
+Flash_saves.cpp/h:        Dùng để lưu dữ liệu vào bộ nhớ flash  
+time64.cpp/h:             Chuyển đổi cơ số thời gian 32-bit của Arduino sang 64-bit, ngăn chặn tràn số sau vài tháng hoạt động liên tục  
+Debug_log.cpp/h:          Dùng để gửi dữ liệu DEBUG qua DMA đến cổng serial 3  
+BambuBus.cpp/h:           Hỗ trợ giao tiếp với máy in Bambu, sử dụng cổng serial 0  
+Klipper.cpp/h:            (Đã dừng phát triển do có nhiều dòng máy Klipper) Hỗ trợ giao tiếp với Klipper  
+ws2812.cpp/h:             Trình điều khiển WS2812 mô phỏng IO  
 
-Motion_control.cpp/h：     负责硬件和运动状态调度
+Các thư viện sử dụng:
 
-Flash_saves.cpp/h：        用于保存数据到flash
+robtillaart/CRC@^1.0.3     Dùng để tính toán kiểm tra CRC  
 
-time64.cpp/h：             将Arduino的32位时基转为64位，防止连续运行几个月后溢出
+#### Đóng góp
 
-Debug_log.cpp/h：          用于DMA发送DEBUG数据到串口3
+Nhà thiết kế:
 
-BambuBus.cpp/h：           用于支持拓竹打印机的通讯，使用了串口0
+4061N - Lập trình viên, tối ưu hóa phần cơ khí, thiết kế PCB  
+括号 (Ngoặc) - Tham gia thiết kế khung thành phần BMCU và giá đỡ từ BMCU đến máy in  
 
-Klipper.cpp/h：            （因klipper机型众多，停止开发）用于支持klipper的通讯
+Một số thành viên nhóm khác cũng tham gia thiết kế, hiện chưa được liệt kê.  
 
-ws2812.cpp/h：             IO模拟的WS2812驱动
+Người thử nghiệm và cung cấp dữ liệu:
 
-调用的库：
+Phong Tuyết(风雪) - Cung cấp dữ liệu giao tiếp giữa máy in và AMS, tham gia một phần thử nghiệm  
+Nhị Nguyệt Miêu - Cung cấp một lượng nhỏ dữ liệu giao tiếp chất lượng cao, tham gia một phần thử nghiệm  
 
-robtillaart/CRC@^1.0.3     用于计算CRC校验
+Các thành viên khác:
 
-#### 参与贡献
-
-设计师：
-
-4061N-程序员，优化机械部分，设计PCB
-
-括号-参与BMCU组件框架及BMCU到打印机支架的设计
-
-部分群友也参与了设计，这里暂未列出
-
-测试和数据提供者：
-
-风雪-提供打印机与AMS通讯的数据，参与部分测试
-
-二月喵-提供少量高质量的通讯数据，参与部分测试
-
-其他成员：
-
-婆老-负责在线摸鱼
-
-其他未列出的群友-提供了宝贵的测试数据和建议
-
+Bà Lão(婆老) - Chịu trách nhiệm "lướt net" trực tuyến  
+Các thành viên nhóm chưa được liệt kê - Cung cấp dữ liệu thử nghiệm và đề xuất quý giá  
